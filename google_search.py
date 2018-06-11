@@ -3,26 +3,16 @@ from selenium import webdriver
 from googlesearch import search
 from pyvirtualdisplay import Display
 
-class test1(unittest.TestCase):
-
-    def setUp(self):
-        self.driver = webdriver.Chrome()
-        self.driver.implicitly_wait(30)
-        self.driver.maximize_window()
-
-    def testing(self):
-        query="foods"
-        for je in search(query,tld="com",num=5,stop=1,pause=2):
-            print(je)
-            list=[je]
-            testa = "http://www.mdpi.com/"
-            for je in list:
-                m = re.match(testa,je)
-                if m:
-                    print("Found")
-
-    def tearDown(self):
-        self.driver.quit()
-
-if __name__ == '__main__':
-    unittest.main()
+display = Display(visible=0, size=(1920, 1080)).start()
+driver = webdriver.Chrome()
+query=input("Enter the search word ")
+name = input("Enter your website's name ")
+for sitelist in search(query,tld="com",num=5,stop=1,pause=2):
+    print(sitelist)
+    list=[sitelist]
+    for sitelist in list:
+        final=re.search(name,sitelist)
+        if final:
+            print("Found")
+        else: print("Not Found")
+driver.quit()
