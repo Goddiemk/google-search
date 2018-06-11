@@ -7,7 +7,7 @@ display = Display(visible=0, size=(1920, 1080)).start()
 driver = webdriver.Chrome()
 query=input("Enter the search word ")
 name = input("Enter your website's name ")
-for sitelist in search(query,tld="co.in",lang="en",num=5,stop=1,pause=2):
+for sitelist in search(query,tld="com",lang="en",num=5,start=0,stop=5,pause=2):
     print(sitelist)
     list=[sitelist]
     for sitelist in list:
