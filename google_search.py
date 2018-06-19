@@ -21,6 +21,7 @@ def main():
             else: print("Not Found")
 
     driver.quit()
+    
 
 if __name__ == '__main__':
     main()
