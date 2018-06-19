@@ -1,12 +1,14 @@
-import re, sys
+import re
+import sys
 from selenium import webdriver
 from googlesearch import search
-from pyvirtualdisplay import Display
+
+# from pyvirtualdisplay import Display
 
 
 def main():
 
-    display = Display(visible=0, size=(1920, 1080)).start()
+    # display = Display(visible=0, size=(1920, 1080)).start()
     driver = webdriver.Chrome()
 
     query = sys.argv[1]
